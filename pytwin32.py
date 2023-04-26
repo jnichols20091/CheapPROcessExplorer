@@ -1,7 +1,8 @@
+import customtkinter
 import psutil
 import tkinter as tk
 
-root = tk.Tk()
+root = customtkinter.CTk()
 
 # set the window title
 root.title("Process Monitor")
@@ -18,7 +19,7 @@ def kill_process():
         process.kill()
         listbox.delete(selection)
 
-kill_button = tk.Button(root, text="Kill", command=kill_process)
+kill_button = customtkinter.CTkButton(master=root, text="Kill", command=kill_process)
 kill_button.pack()
 
 # Get a list of running processes
